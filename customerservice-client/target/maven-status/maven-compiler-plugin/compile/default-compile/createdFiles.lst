@@ -1,0 +1,3 @@
+com\customerservice\bean\Customer.class
+com\customerservice\service\CustomerService.class
+com\customerservice\bean\Address.class
