@@ -3,6 +3,7 @@ package com.customerservice.service;
 import org.springframework.stereotype.Component;
 
 import com.customerservice.bean.Customer;
+import com.google.gson.Gson;
 
 @Component("customerService")
 public class CustomerServiceImpl implements CustomerService {
@@ -25,5 +26,23 @@ public class CustomerServiceImpl implements CustomerService {
 		customer.setName(name);
 		customer.setLocation(location);
 		return customer;
+	}
+
+	@Override
+	public String getCustomerPostPathParam(Integer id) {
+		return id + " in POST call getCustomerPostPathParam";
+	}
+
+	@Override
+	public String getCustomerPostQueryParam(Integer id) {
+		return id + " in POST call getCustomerPostQueryParam";
+	}
+
+	@Override
+	public Customer getCustomerPostRequestBody(String customerJson) {
+		Gson gson = new Gson();
+		Customer customer = gson.fromJson(customerJson, Customer.class);
+		return customer;
+
 	}
 }
