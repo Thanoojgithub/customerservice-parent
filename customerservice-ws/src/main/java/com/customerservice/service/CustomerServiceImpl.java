@@ -45,4 +45,10 @@ public class CustomerServiceImpl implements CustomerService {
 		return customer;
 
 	}
+
+	@Override
+	public Customer getCustomerPostRequestBodyXml(Customer customerXml) {
+		customerXml.setLocation("14YearsAranyaVasam");
+		return customerXml;
+	}
 }

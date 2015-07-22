@@ -56,6 +56,16 @@ public interface CustomerService {
 	public Customer getCustomerPostRequestBody(@Description("id") @RequestBody final String customerJson);
 	
 	/*
+	 * To make sure, it is XML element based communication - used only MediaType.APPLICATION_XML
+	 */
+	@POST
+	@Path("/getCustomerPostRequestBodyXml")
+	@Description(value = "Resource", target = DocTarget.RESOURCE)
+	@Consumes(MediaType.APPLICATION_XML)
+	@Produces( MediaType.APPLICATION_XML)
+	public Customer getCustomerPostRequestBodyXml(@Description("id") @RequestBody final Customer customerXml);
+	
+	/*
 	 * Annotation which indicates that a method parameter should be bound to a web request parameter. Supported for annotated handler methods in Servlet and Portlet environments. 
 	 */
 	
